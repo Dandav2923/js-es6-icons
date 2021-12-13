@@ -1,0 +1,16 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: grey;
+}
+.container-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 100px;
+    background-color: white;
+    margin: 20px;
+}
