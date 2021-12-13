@@ -131,9 +131,9 @@
 // Milestone 1
 // Partendo dalla struttura dati fornita, visualizzare in pagina un box per ogni icona, in cui è presente il nome dell'icona e l'icona stessa.
 
-// stampiamo in pagina tutti gli elementi dell'array tramite una funzione 
+// stampiamo in pagina tutti gli elementi dell'array tramite una funzione e coloriamo le icone del colore corrispondente
 
-function printelElement(array, container) {
+function printElement(array, container) {
 	container.innerHTML = '';
 	for (let i = 0; i < array.length; i++) {
 		const obj = array[i];
@@ -146,5 +146,23 @@ function printelElement(array, container) {
 		container.innerHTML += templatePost;
 	}
 }
+
+// 	Milestone 3
+// Aggiungere alla pagina una select in cui le options corrispondono ai vari tipi di icone(animal, vegetable, user).Quando l'utente seleziona un tipo dalla select, visualizzare solamente le icone corrispondenti.
+
 const container = document.getElementById('container');
-printelElement(objMain, container);
+let select = document.getElementById('select');
+console.log(select);
+let value = select.value;
+console.log(value);
+if (value == 'all') {
+	container.innerHTML = '';
+	printElement(objMain, container);
+} else if (value == 'animal'){
+	container.innerHTML = '';
+	let objAnimal = objMain.filter((element) => {
+		return element.type == 'animal';
+	}
+	);
+	printElement(objAnimal, container);
+}
