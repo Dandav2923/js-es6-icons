@@ -139,7 +139,7 @@ function printelElement(array, container) {
 		const obj = array[i];
 		const templatePost = `
         <div class="container-box">
-            <i class="${obj.family} ${obj.prefix}${obj.name}" style="${obj.color}"></i>
+            <i class="${obj.family} ${obj.prefix}${obj.name}" style="color:${obj.color}"></i>
             <span>${obj.name}</span>
         </div>
       `;
