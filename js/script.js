@@ -152,17 +152,32 @@ function printElement(array, container) {
 
 const container = document.getElementById('container');
 let select = document.getElementById('select');
-console.log(select);
-let value = select.value;
-console.log(value);
-if (value == 'all') {
-	container.innerHTML = '';
-	printElement(objMain, container);
-} else if (value == 'animal'){
-	container.innerHTML = '';
-	let objAnimal = objMain.filter((element) => {
-		return element.type == 'animal';
+// console.log(select);
+printElement(objMain, container);
+select.addEventListener('change', function (){
+	let value = select.value;
+	// console.log(value);
+	if (value == 'all') {
+		printElement(objMain, container);
+	} else if (value == 'animal'){
+		let objAnimal = objMain.filter((element) => {
+			return element.type == 'animal';
+		}
+		);
+		printElement(objAnimal, container);
 	}
-	);
-	printElement(objAnimal, container);
-}
+	else if (value == 'vegetable') {
+		let objVegetable = objMain.filter((element) => {
+			return element.type == 'vegetable';
+		}
+		);
+		printElement(objVegetable, container);
+	}
+	else if (value == 'user') {
+		let objUser = objMain.filter((element) => {
+			return element.type == 'user';
+		}
+		);
+		printElement(objUser, container);
+	}
+});
